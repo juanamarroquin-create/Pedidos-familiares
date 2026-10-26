@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos familiares 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <div class="corazon">♡</div>
+    <h1>Pedidos familiares</h1>
+    <p>¡Organicemos juntos las comidas de nuestro viaje!</p>
+    <div class="fechas">
+      📅 Sábado 24 y domingo 25 de octubre de 2026
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="tarjeta">
+      <h2>🌷 Datos de quien registra</h2>
+      <p class="ayuda">
+        Cuéntanos quién está realizando el registro.
+      </p>
+
+      <label for="organizador">Nombre de quien hace el registro</label>
+      <input
+        type="text"
+        id="organizador"
+        placeholder="Escribe tu nombre"
+        required
+      >
+    </section>
+
+    <section class="tarjeta">
+      <h2>👨‍👩‍👧‍👦 Integrantes de la familia</h2>
+      <p class="ayuda">
+        Agrega a cada persona y registra lo que desea comer.
+      </p>
+
+      <div id="listaIntegrantes"></div>
+
+      <button type="button" id="agregarIntegrante" class="boton-secundario">
+        + Agregar integrante
+      </button>
+    </section>
+
+    <section class="tarjeta">
+      <h2>🍳 Desayunos</h2>
+      <p class="ayuda">
+        Elige el desayuno de cada integrante para cada día.
+      </p>
+      <div id="desayunos"></div>
+    </section>
+
+    <section class="tarjeta">
+      <h2>🍲 Almuerzos</h2>
+      <p class="ayuda">
+        Cada día tiene su menú correspondiente.
+      </p>
+      <div id="almuerzos"></div>
+    </section>
+
+    <section class="tarjeta">
+      <h2>💌 Confirmación</h2>
+      <p class="ayuda">
+        Revisa los pedidos antes de enviarlos.
+      </p>
+
+      <label for="observaciones">Observaciones (opcional)</label>
+      <textarea
+        id="observaciones"
+        placeholder="¿Alguna aclaración sobre los pedidos?"
+        rows="3"
+      ></textarea>
+
+      <button type="button" id="guardarPedidos" class="boton-principal">
+        Confirmar pedidos
+      </button>
+
+      <div id="mensaje" role="status" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    Hecho con cariño para nuestra familia 💕
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>

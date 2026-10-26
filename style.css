@@ -1,0 +1,305 @@
+
+/* ==============================
+   COLORES Y ESTILOS GENERALES
+================================= */
+
+:root {
+  --rosa-fondo: #fff5f8;
+  --rosa-claro: #ffe4ed;
+  --rosa-medio: #f6b6cc;
+  --rosa-fuerte: #d85d8a;
+  --rosa-oscuro: #9f315c;
+  --blanco: #ffffff;
+  --texto: #59424b;
+  --gris: #8d7a82;
+  --borde: #f3d3df;
+  --verde: #477b5b;
+  --sombra: 0 8px 24px rgba(176, 75, 115, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--rosa-fondo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* ==============================
+   ENCABEZADO
+================================= */
+
+.encabezado {
+  text-align: center;
+  padding: 42px 20px 35px;
+  background: linear-gradient(135deg, #ffe4ed, #fff0f5, #fbd5e3);
+  border-bottom: 1px solid var(--borde);
+}
+
+.corazon {
+  color: var(--rosa-fuerte);
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.encabezado h1 {
+  color: var(--rosa-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 6vw, 44px);
+  margin: 12px 0 8px;
+}
+
+.encabezado p {
+  margin: 0 auto 18px;
+  max-width: 500px;
+  color: #795665;
+}
+
+.fechas {
+  display: inline-block;
+  padding: 10px 17px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--borde);
+  border-radius: 30px;
+  color: var(--rosa-oscuro);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ==============================
+   CONTENEDOR Y TARJETAS
+================================= */
+
+.contenedor {
+  width: min(100% - 32px, 850px);
+  margin: 30px auto;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--sombra);
+}
+
+.tarjeta h2 {
+  color: var(--rosa-oscuro);
+  font-size: 21px;
+  margin: 0 0 8px;
+}
+
+.ayuda {
+  color: var(--gris);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+/* ==============================
+   CAMPOS Y FORMULARIOS
+================================= */
+
+label {
+  display: block;
+  margin: 14px 0 7px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--texto);
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 13px;
+  background: #fffafd;
+  border: 1px solid var(--borde);
+  border-radius: 11px;
+  color: var(--texto);
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--rosa-fuerte);
+  box-shadow: 0 0 0 3px rgba(216, 93, 138, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #b6a1aa;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ==============================
+   BOTONES
+================================= */
+
+button {
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #e99ab8;
+  outline-offset: 3px;
+}
+
+.boton-principal,
+.boton-secundario {
+  width: 100%;
+  border-radius: 12px;
+  padding: 13px 18px;
+  font-weight: bold;
+}
+
+.boton-principal {
+  margin-top: 20px;
+  color: white;
+  background: var(--rosa-fuerte);
+  border: none;
+}
+
+.boton-principal:hover {
+  background: var(--rosa-oscuro);
+}
+
+.boton-secundario {
+  margin-top: 18px;
+  color: var(--rosa-oscuro);
+  background: var(--rosa-claro);
+  border: 1px dashed var(--rosa-fuerte);
+}
+
+.boton-secundario:hover {
+  background: #ffd5e4;
+}
+
+/* ==============================
+   ESPACIOS DINÁMICOS
+================================= */
+
+#listaIntegrantes,
+#desayunos,
+#almuerzos {
+  display: grid;
+  gap: 16px;
+}
+
+.integrante,
+.comida-card,
+.menu-card {
+  background: #fff9fb;
+  border: 1px solid var(--borde);
+  border-radius: 15px;
+  padding: 17px;
+}
+
+.integrante h3,
+.comida-card h3,
+.menu-card h3 {
+  color: var(--rosa-oscuro);
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+.integrante .eliminar {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: white;
+  color: #b64265;
+  border: 1px solid #efb7c9;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.opciones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 11px;
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 11px;
+  font-size: 14px;
+}
+
+.opcion input {
+  width: auto;
+  margin-top: 5px;
+  accent-color: var(--rosa-fuerte);
+}
+
+#mensaje {
+  margin-top: 14px;
+  color: var(--verde);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ==============================
+   PIE DE PÁGINA
+================================= */
+
+footer {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--gris);
+  font-size: 13px;
+}
+
+/* ==============================
+   ADAPTACIÓN A CELULARES
+================================= */
+
+@media (max-width: 520px) {
+  .encabezado {
+    padding: 32px 16px;
+  }
+
+  .contenedor {
+    width: min(100% - 20px, 850px);
+    margin: 18px auto;
+  }
+
+  .tarjeta {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .opciones {
+    grid-template-columns: 1fr;
+  }
+
+  .fechas {
+    font-size: 12px;
+  }
+}
